@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #262628;
+  --color-muted: #575757;
+  --color-paper: #fafafa;
+  --color-coal: #1a1d21;
+  --color-silver: #c3c4c5;
+  --color-line: #e6e6e6;
+  --font-sans: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Marquee ---------- */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x var(--marquee-duration, 32s) linear infinite;
+  will-change: transform;
+}
+
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+}
+
+.marquee-fade:hover .marquee-track,
+.marquee-fade:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    width: 100%;
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+  }
+
+  .marquee-group {
+    width: 100%;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-right: 0;
+  }
+
+  .marquee-group[data-clone="true"] {
+    display: none;
+  }
+
+  .marquee-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ---------- Parallax media ---------- */
+@keyframes parallax-drift {
+  from {
+    transform: translateY(-8%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .parallax-img {
+    animation: parallax-drift linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.faq-answer[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer > div {
+  overflow: hidden;
+}

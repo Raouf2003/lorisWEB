@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "LORIS - La clôture électrique intelligente",
+    "description": "Protégez votre bétail avec le berger électrique intelligent — sans danger, à l'énergie solaire et facile à installer. Conception robuste, batterie de 50 heures d'autonomie et la confiance des agriculteurs pour une protection fiable et sans effort."
+  },
+  "nav": {
+    "homeAria": "LORIS — Page d'accueil",
+    "logoAlt": "LORIS",
+    "about": "À propos de LORIS",
+    "how": "Comment ça marche",
+    "product": "Produit",
+    "contact": "Contactez-nous",
+    "cta": "Commandez votre appareil",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu",
+    "languageLabel": "Changer de langue"
+  },
+  "hero": {
+    "title": "Votre confort commence avec le Berger Électrique",
+    "subtitle": "Un appareil intelligent qui protège votre bétail sans effort, grâce à des chocs doux et sans danger et une batterie longue durée qui vous procure la tranquillité d'esprit où que vous soyez.",
+    "imageAlt": "Le Berger Électrique LORIS"
+  },
+  "marquee": {
+    "heading": "Les atouts LORIS",
+    "benefits": [
+      "Batterie tenante jusqu'à 50 heures",
+      "Fonctionne à l'énergie solaire",
+      "Chocs électriques sans danger",
+      "Une solution efficace et facile à utiliser"
+    ]
+  },
+  "about": {
+    "eyebrow": "Le Berger Électrique — votre confort commence ici",
+    "title": "Pourquoi le berger électrique LORIS ?",
+    "p1": "Au quotidien, l'agriculteur fait face à de grands défis pour **surveiller et protéger son bétail**, ce qui consomme beaucoup de temps et d'énergie.",
+    "p2": "Le Berger Électrique a vu le jour comme la **solution moderne et intelligente** qui apporte confort et sécurité à la fois.",
+    "imageAlt": "Le Berger Électrique au travail dans le champ"
+  },
+  "features": {
+    "eyebrow": "Mode de fonctionnement",
+    "title": "Comment fonctionne le berger LORIS ?",
+    "p1": "L'appareil repose sur des **chocs électriques doux et sans danger** qui maintiennent le bétail à l'intérieur du pâturage, sans surveillance permanente.",
+    "p2": "Il fonctionne avec une **batterie puissante offrant jusqu'à 50 heures d'autonomie**, rechargeable à l'énergie solaire dans les zones éloignées du réseau électrique."
+  },
+  "stats": {
+    "eyebrow": "Pourquoi nous ?",
+    "title": "La confiance des agriculteurs et des éleveurs partout dans le pays.",
+    "paragraph": "Le Berger Électrique a séduit des centaines d'agriculteurs et d'éleveurs dans de nombreuses régions, grâce au confort, à la sécurité et à la facilité d'utilisation qu'il offre. Beaucoup de nos utilisateurs affirment avoir gagné des heures de garde quotidienne et pouvoir désormais conduire leur troupeau en toute confiance, sans crainte de fuite ni de perte. L'appareil a fait ses preuves dans les champs ouverts comme en zones montagneuses, et s'est imposé comme le premier choix de tout agriculteur cherchant une solution pratique pour protéger son troupeau et s'épargner des efforts.",
+    "cards": [
+      { "title": "Installation", "desc": "Facile à installer et à utiliser." },
+      { "title": "Sécurité", "desc": "Sécurité totale pour le bétail, sans aucun danger." },
+      {
+        "title": "Alimentation solaire",
+        "desc": "Fonctionnement continu jusqu'à **50 heures**."
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Conception",
+    "title": "Une conception qui résiste à toutes les conditions",
+    "description": "Le Berger Électrique est conçu avec des matériaux robustes et de haute qualité pour résister à la chaleur, à la poussière et à l'humidité des milieux agricoles les plus difficiles. Sa structure solide et résistante aux chocs garantit des performances constantes, même dans les conditions les plus rudes.",
+    "carousel": {
+      "ariaLabel": "Galerie d'images du produit",
+      "imageAlts": ["Le Berger Électrique — le produit", "Le Berger Électrique — les détails", "Le Berger Électrique — l'utilisation"],
+      "viewImage": "Afficher l'image {{n}}",
+      "slideInfo": "Image {{index}} sur {{total}}"
+    }
+  },
+  "video": {
+    "title": "Découvrez les produits LORIS",
+    "description": "Découvrez nos solutions électroniques et nos produits en vidéo.",
+    "videoLabel": "Lecteur vidéo des produits LORIS"
+  },
+  "futureProduct": {
+    "status": "En cours de développement",
+    "title": "Système d'alarme intelligent pour clôture électrique",
+    "brandLine": null,
+    "subtitle": "Une future solution de sécurité conçue et développée par LORIS Electronics.",
+    "description": "LORIS Electronics développe un système d'alarme dédié aux clôtures électriques, destiné à renforcer la protection des biens, des bâtiments et des installations en combinant surveillance de sécurité et alertes sonores et lumineuses.",
+    "vision": "Ce projet représente une nouvelle étape dans l'orientation de l'entreprise vers des solutions électroniques pratiques, alliant sécurité, fiabilité et simplicité d'utilisation.",
+    "features": [
+      {
+        "title": "Protection de sécurité renforcée",
+        "desc": "Développement d'un mécanisme de surveillance de la clôture pour aider à détecter les cas de sabotage ou les tentatives d'intrusion, conformément au design final."
+      },
+      {
+        "title": "Alarme sonore et lumineuse",
+        "desc": "Possibilité d'intégrer une sirène d'alarme et un voyant d'avertissement pour alerter les responsables dès qu'une situation nécessitant leur attention est détectée."
+      },
+      {
+        "title": "Compatibilité énergie solaire",
+        "desc": "Étude de l'intégration d'un système d'alimentation solaire pour offrir plus de flexibilité lors de l'installation et du fonctionnement."
+      },
+      {
+        "title": "Un design évolutif",
+        "desc": "Conception d'une unité électronique adaptée aux maisons, aux établissements et aux sites qui ont besoin de protéger leur périmètre extérieur."
+      }
+    ],
+    "imageAlt": "Image illustrative du système d'alarme pour clôture électrique de LORIS — un produit futur en cours de développement",
+    "imageNote": "L'image présentée est une illustration conceptuelle du futur produit et ne représente pas nécessairement la version finale de l'appareil.",
+    "stageLabel": "Étape actuelle :",
+    "stageText": "Le projet est actuellement en phase de conception, de développement et de tests préliminaires. Les spécifications finales et la date de lancement seront annoncées une fois les phases de développement achevées et les performances du système validées."
+  },
+  "faq": {
+    "eyebrow": "FAQ :",
+    "title": "Tout ce que vous voulez savoir sur le berger électrique LORIS",
+    "items": [
+      {
+        "q": "Le berger électrique est-il nuisible au bétail ?",
+        "a": "Non, les chocs électriques sont doux et totalement sans danger. Ils servent uniquement à dissuader l'animal lorsqu'il tente de franchir la clôture, sans lui causer le moindre mal."
+      },
+      {
+        "q": "Combien de temps dure la batterie du berger électrique ?",
+        "a": "Jusqu'à 50 heures de fonctionnement continu. Elle se recharge facilement sur le secteur ou grâce à l'énergie solaire dans les zones éloignées."
+      },
+      {
+        "q": "Peut-on l'utiliser sur tous les types de terrains ?",
+        "a": "Oui, il fonctionne efficacement dans les champs ouverts, les fermes de montagne et les zones désertiques, grâce à sa conception résistante aux conditions les plus difficiles."
+      },
+      {
+        "q": "Que contient le kit du berger électrique ?",
+        "a": "Il comprend l'appareil d'origine, le fil conducteur, les isolateurs, les connexions, le chargeur d'origine et le mode d'emploi — tout ce qu'il faut pour le mettre en service immédiatement."
+      },
+      {
+        "q": "Est-il facile à installer et à utiliser ?",
+        "a": "Bien sûr. L'appareil s'accompagne d'un mode d'emploi clair et illustré qui explique l'installation étape par étape : n'importe qui peut l'installer en quelques minutes."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Commandez-le aujourd'hui et retrouvez votre tranquillité dès demain",
+    "button": "Contactez-nous pour toute demande",
+    "asideTitle": "Le confort commence par un seul pas",
+    "asideText": "Le Berger Électrique vous apporte la tranquillité d'esprit dès le premier jour, avec une protection efficace de votre bétail, sans fatigue ni surveillance permanente. Un seul pas aujourd'hui fait toute la différence demain."
+  },
+  "contact": {
+    "eyebrow": "Contactez-nous",
+    "title": "Disponibles 24 h/24, 7 j/7",
+    "description": "Vous pouvez nous contacter par e-mail ou par téléphone. Nous veillons à répondre dans les plus brefs délais et nous serions ravis d'avoir bientôt de vos nouvelles !",
+    "whatsapp": "Écrivez-nous sur WhatsApp",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "phoneAria": "Appelez-nous au 0669 99 08 96"
+  },
+  "footer": {
+    "tagline": "La solution, c'est le berger LORIS",
+    "logoAlt": "LORIS",
+    "companyTitle": "Entreprise",
+    "contactLink": "Contactez-nous",
+    "bigLogoAlt": "Logo LORIS",
+    "rights": "© 2025. Tous droits réservés. LORIS",
+    "instagramAria": "LORIS sur Instagram"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "LORIS - The Smart Electric Fence",
+    "description": "Protect your livestock with the smart electric shepherd — safe, solar-powered, and easy to install. Durable design, a battery that lasts 50 hours, and the trust of farmers for reliable, effortless protection."
+  },
+  "nav": {
+    "homeAria": "LORIS — Home page",
+    "logoAlt": "LORIS",
+    "about": "About LORIS",
+    "how": "How it works",
+    "product": "Product",
+    "contact": "Contact us",
+    "cta": "Order your device now",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "languageLabel": "Change language"
+  },
+  "hero": {
+    "title": "Your comfort starts with the Electric Shepherd",
+    "subtitle": "A smart device that protects your livestock effortlessly — with safe, mild shocks and a long-lasting battery that gives you peace of mind wherever you are.",
+    "imageAlt": "The LORIS Electric Shepherd"
+  },
+  "marquee": {
+    "heading": "LORIS highlights",
+    "benefits": [
+      "Battery lasting up to 50 hours",
+      "Runs on solar power",
+      "Safe electric shocks",
+      "An effective, easy-to-use solution"
+    ]
+  },
+  "about": {
+    "eyebrow": "The Electric Shepherd — where your comfort begins",
+    "title": "Why the LORIS Electric Shepherd?",
+    "p1": "Every day, farmers face major challenges in **monitoring and protecting their livestock**, which takes a heavy toll on their time and energy.",
+    "p2": "The Electric Shepherd was created as the **smart, modern solution** that delivers comfort and safety at once.",
+    "imageAlt": "The Electric Shepherd working in the field"
+  },
+  "features": {
+    "eyebrow": "How it works",
+    "title": "How does the LORIS Electric Shepherd work?",
+    "p1": "The device relies on **mild, harmless electric shocks** that keep livestock within the boundaries of the pasture — no constant guarding required.",
+    "p2": "It runs on a **powerful battery lasting up to 50 hours**, and can be recharged with solar power in areas away from the grid."
+  },
+  "stats": {
+    "eyebrow": "Why us?",
+    "title": "Trusted by farmers and livestock breeders across the country.",
+    "paragraph": "The Electric Shepherd has won the satisfaction of hundreds of farmers and livestock breeders across many regions, thanks to the comfort, safety, and ease of use it provides. Many of our users say they have saved hours of daily guarding and can now manage their herds with complete confidence — no fear of escape or loss. The device has proven its effectiveness in open fields and mountainous areas, and has become the first choice for any farmer looking for a practical solution that protects the herd and saves effort.",
+    "cards": [
+      { "title": "Installation", "desc": "Easy to install and use." },
+      { "title": "Safety", "desc": "Complete safety for livestock, with no harm." },
+      {
+        "title": "Solar-powered support",
+        "desc": "Continuous operation for up to **50 hours**."
+      }
+    ]
+  },
+  "product": {
+    "eyebrow": "Design",
+    "title": "A design built to withstand any conditions",
+    "description": "The Electric Shepherd is built from durable, high-quality materials designed to withstand heat, dust, and humidity in demanding farming environments. Its rugged, shock-resistant structure guarantees steady performance even in the harshest conditions.",
+    "carousel": {
+      "ariaLabel": "Product image gallery",
+      "imageAlts": ["The Electric Shepherd — the product", "The Electric Shepherd — the details", "The Electric Shepherd — in use"],
+      "viewImage": "View image {{n}}",
+      "slideInfo": "Image {{index}} of {{total}}"
+    }
+  },
+  "video": {
+    "title": "Discover LORIS Products",
+    "description": "Explore our electronic solutions and discover our products through video.",
+    "videoLabel": "LORIS product video player"
+  },
+  "futureProduct": {
+    "status": "In Development",
+    "title": "Smart Electric Fence Alarm System",
+    "brandLine": null,
+    "subtitle": "An upcoming security solution being designed and developed by LORIS Electronics.",
+    "description": "LORIS Electronics is developing a dedicated alarm system for electric fences, aimed at strengthening the protection of properties, buildings, and facilities by combining security monitoring with audible and visual alerts.",
+    "vision": "This project marks a new step in the company's direction toward developing practical electronic solutions that combine safety, reliability, and ease of use.",
+    "features": [
+      {
+        "title": "Enhanced security protection",
+        "desc": "Developing a mechanism to monitor the fence and help detect tampering or intrusion attempts, in line with the final design."
+      },
+      {
+        "title": "Audible and visual alarm",
+        "desc": "Option to integrate a siren and warning light to alert the staff in charge whenever a situation requiring attention is detected."
+      },
+      {
+        "title": "Solar power capability",
+        "desc": "Evaluating the integration of a solar power system to allow greater flexibility in installation and operation."
+      },
+      {
+        "title": "A design built to evolve",
+        "desc": "Designing an electronic unit suitable for homes, facilities, and sites that need to protect their perimeter."
+      }
+    ],
+    "imageAlt": "Illustrative image of the LORIS electric fence alarm system — a future product in development",
+    "imageNote": "The displayed image is an illustrative concept of the future product and does not necessarily represent the final version of the device.",
+    "stageLabel": "Current stage:",
+    "stageText": "The project is currently in the design, development, and initial testing phase. Final specifications and the launch date will be announced once development is complete and system performance has been verified."
+  },
+  "faq": {
+    "eyebrow": "FAQ:",
+    "title": "Everything you want to know about the LORIS Electric Shepherd",
+    "items": [
+      {
+        "q": "Does the Electric Shepherd harm livestock?",
+        "a": "No — the electric shocks are mild and completely safe. Their sole purpose is to deter the animal when it tries to cross the fence, without causing it any harm."
+      },
+      {
+        "q": "How long does the Electric Shepherd's battery last?",
+        "a": "Up to 50 hours of continuous operation. It recharges easily from the mains, or with solar power in remote areas."
+      },
+      {
+        "q": "Can it be used on every type of terrain?",
+        "a": "Yes — it performs efficiently in open fields, mountain farms, and desert areas, thanks to a design that resists harsh conditions."
+      },
+      {
+        "q": "What does the Electric Shepherd kit include?",
+        "a": "It includes the original device, the carrying wire, insulators, clips, the original charger, and a user manual — everything you need to run it right away."
+      },
+      {
+        "q": "Is it easy to install and operate?",
+        "a": "Absolutely. The device comes with a clear, illustrated user manual that explains the installation step by step — anyone can set it up in minutes."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Order it today and enjoy your comfort tomorrow",
+    "button": "Contact us for inquiries",
+    "asideTitle": "Comfort starts with a single step",
+    "asideText": "The Electric Shepherd gives you peace of mind from day one, with effective protection for your livestock — no strain, no constant watching. One step today makes a big difference tomorrow."
+  },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "title": "Available around the clock",
+    "description": "You can reach us by email or phone. We make sure to reply as soon as possible, and we look forward to hearing from you soon!",
+    "whatsapp": "Chat with Us on WhatsApp",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "phoneAria": "Call us at 0669 99 08 96"
+  },
+  "footer": {
+    "tagline": "The solution is the LORIS Electric Shepherd",
+    "logoAlt": "LORIS",
+    "companyTitle": "Company",
+    "contactLink": "Contact us",
+    "bigLogoAlt": "LORIS logo",
+    "rights": "© 2025. All rights reserved. LORIS",
+    "instagramAria": "LORIS on Instagram"
+  }
+}
