@@ -115,7 +115,7 @@ export function ProductCarousel() {
         onPointerLeave={onPointerLeave}
         className="group relative overflow-hidden rounded-3xl bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-4"
       >
-        <div className="relative aspect-[16/9]">
+        <div className="relative aspect-[11/9]">
           {SLIDE_SRCS.map((src, i) => (
             <Image
               key={src}
