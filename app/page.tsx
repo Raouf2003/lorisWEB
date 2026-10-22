@@ -12,6 +12,7 @@ import { FutureProduct } from "@/components/future-product";
 import { Faq } from "@/components/faq";
 import { Cta } from "@/components/cta";
 import { Contact } from "@/components/contact";
+import { Reveal } from "@/components/reveal";
 import { Rich, useLocale } from "@/lib/i18n";
 
 export default function Home() {
@@ -57,13 +58,15 @@ export default function Home() {
 
         <section id="product" className="bg-white px-6">
           <div className="mx-auto max-w-[1248px] py-16 md:py-24">
-            <p className="text-base text-muted">{t("product.eyebrow")}</p>
-            <h3 className="mt-3 text-3xl font-semibold leading-tight md:text-[40px]">
-              {t("product.title")}
-            </h3>
-            <p className="mt-5 max-w-[720px] text-base leading-relaxed text-muted md:text-lg">
-              {t("product.description")}
-            </p>
+            <Reveal as="div" delay={80}>
+              <p className="text-base text-muted">{t("product.eyebrow")}</p>
+              <h3 className="mt-3 text-3xl font-semibold leading-tight md:text-[40px]">
+                {t("product.title")}
+              </h3>
+              <p className="mt-5 max-w-[720px] text-base leading-relaxed text-muted md:text-lg">
+                {t("product.description")}
+              </p>
+            </Reveal>
             <ProductCarousel />
           </div>
         </section>
@@ -74,10 +77,12 @@ export default function Home() {
 
         <section className="bg-white px-6">
           <div className="mx-auto max-w-[1248px] py-16 md:py-24">
-            <p className="text-base text-muted">{t("faq.eyebrow")}</p>
-            <h3 className="mt-3 text-3xl font-semibold leading-tight md:text-[40px]">
-              {t("faq.title")}
-            </h3>
+            <Reveal as="div" delay={80}>
+              <p className="text-base text-muted">{t("faq.eyebrow")}</p>
+              <h3 className="mt-3 text-3xl font-semibold leading-tight md:text-[40px]">
+                {t("faq.title")}
+              </h3>
+            </Reveal>
             <Faq />
           </div>
         </section>

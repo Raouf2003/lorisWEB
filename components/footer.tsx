@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FOOTER_COLUMNS } from "@/lib/site";
 import { useLocale } from "@/lib/i18n";
+import { Reveal } from "./reveal";
 
 export function Footer() {
   const { t } = useLocale();
@@ -10,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-coal text-white">
       <div className="mx-auto max-w-[1248px] px-6 pb-8 pt-16 md:pt-20">
-        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
+        <Reveal as="div" direction="fade" className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div className="flex items-center gap-4 md:order-2 md:gap-6">
             <span className="text-sm text-silver md:text-base">
               {t("footer.tagline")}
@@ -45,9 +46,9 @@ export function Footer() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="mt-14 md:mt-20">
+        <Reveal as="div" delay={100} className="mt-14 md:mt-20">
           <Image
             src="/images/logo-white.png"
             alt={t("footer.bigLogoAlt")}
@@ -55,7 +56,7 @@ export function Footer() {
             height={511}
             className="h-auto w-full"
           />
-        </div>
+        </Reveal>
 
         <div className="mt-10 flex flex-col justify-between gap-3 text-sm text-silver md:flex-row md:items-center">
           <p>{t("footer.rights")}</p>

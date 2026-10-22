@@ -2,6 +2,7 @@
 
 import type { SVGProps } from "react";
 import { useLocale } from "@/lib/i18n";
+import { Reveal } from "./reveal";
 
 type Icon = (props: SVGProps<SVGSVGElement>) => React.ReactElement;
 
@@ -94,7 +95,10 @@ export function Marquee() {
   const { t, dict, dir } = useLocale();
 
   return (
-    <section
+    <Reveal
+      as="section"
+      direction="fade"
+      delay={80}
       aria-label={t("marquee.heading")}
       className="border-y border-line/70 bg-paper py-5 md:py-6"
     >
@@ -120,6 +124,6 @@ export function Marquee() {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

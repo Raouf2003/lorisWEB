@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { Reveal } from "./reveal";
 
 type FeatureBlockProps = {
   id?: string;
@@ -31,7 +34,7 @@ export function FeatureBlock({
           <BlockImage src={image} alt={imageAlt ?? ""} />
         )}
 
-        <div className="max-w-[720px]">
+        <Reveal as="div" delay={imageFirst ? 120 : 0} className="max-w-[720px]">
           <p className="text-base text-muted">{eyebrow}</p>
           <h4 className="mt-3 text-3xl font-semibold leading-tight md:text-[32px]">
             {title}
@@ -39,7 +42,7 @@ export function FeatureBlock({
           <div className="mt-5 text-base leading-relaxed text-muted md:text-lg [&_b]:font-semibold [&_b]:text-ink [&_strong]:font-semibold [&_strong]:text-ink">
             {children}
           </div>
-        </div>
+        </Reveal>
 
         {!imageFirst && image && (
           <BlockImage src={image} alt={imageAlt ?? ""} />
@@ -51,7 +54,7 @@ export function FeatureBlock({
 
 function BlockImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="w-full overflow-hidden rounded-3xl">
+    <Reveal direction="scale" className="w-full overflow-hidden rounded-3xl">
       <Image
         src={src}
         alt={alt}
@@ -59,6 +62,6 @@ function BlockImage({ src, alt }: { src: string; alt: string }) {
         height={948}
         className="h-auto w-full"
       />
-    </div>
+    </Reveal>
   );
 }

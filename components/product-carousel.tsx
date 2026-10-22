@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { FocusEvent, KeyboardEvent, PointerEvent } from "react";
 import { useLocale } from "@/lib/i18n";
+import { Reveal } from "./reveal";
 
 const SLIDE_SRCS = [
   "/images/product-11111.png",
@@ -100,7 +101,7 @@ export function ProductCarousel() {
   };
 
   return (
-    <div className="mt-12">
+    <Reveal as="div" delay={80} className="mt-12">
       <div
         ref={rootRef}
         role="region"
@@ -139,7 +140,7 @@ export function ProductCarousel() {
               aria-label={t("product.carousel.viewImage", { n: i + 1 })}
               aria-pressed={i === index}
               onClick={() => setIndex(i)}
-              className={`overflow-hidden rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40 motion-reduce:transition-none ${
+              className={`overflow-hidden rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:scale-[1.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40 motion-reduce:transition-none ${
                 i === index
                   ? "ring-2 ring-white"
                   : "opacity-60 hover:opacity-90"
@@ -160,6 +161,6 @@ export function ProductCarousel() {
           {t("product.carousel.slideInfo", { index: index + 1, total: count })}
         </p>
       </div>
-    </div>
+    </Reveal>
   );
 }

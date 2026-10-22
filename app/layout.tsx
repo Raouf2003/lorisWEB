@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -16,11 +17,20 @@ export const metadata: Metadata = {
 };
 
 /**
- * Runs before first paint / hydration: applies a returning visitor's stored
- * locale to <html> so the page never flashes in the wrong direction.
+ * Runs before first paint / hydration, so triggers before the browser's own
+ * scroll restoration. It:
+ *  - marks that JS is available (gate for scroll-reveal styles),
+ *  - hands scroll restoration over to us: a reload always starts on the hero,
+ *    while a genuine deep link (fresh navigation to a #hash URL) still jumps
+ *    natively to its section — `history.scrollRestoration` only governs
+ *    session restores, never fragment navigation,
+ *  - applies a returning visitor's stored locale to <html> so the page never
+ *    flashes in the wrong direction.
  * Default (no/failing storage) stays Arabic RTL, matching the server HTML.
+ * Back/forward traversal of hash entries is handled in
+ * components/smooth-scroll.tsx (popstate).
  */
-const LOCALE_BOOTSTRAP = `try{var v=localStorage.getItem("loris-locale");if(v==="en"||v==="fr"){document.documentElement.lang=v;document.documentElement.dir="ltr";}}catch(e){}`;
+const BOOTSTRAP = `try{var d=document.documentElement;d.classList.add("js");history.scrollRestoration="manual";var nv=performance.getEntriesByType("navigation")[0]||{};if((nv.type||"")==="reload"){history.replaceState(null,"",location.pathname+location.search);window.scrollTo(0,0);}else if((nv.type||"navigate")!=="navigate"){window.scrollTo(0,0);}var v=localStorage.getItem("loris-locale");if(v==="en"||v==="fr"){d.lang=v;d.dir="ltr";}}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -37,9 +47,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-ink">
         <script
           suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: LOCALE_BOOTSTRAP }}
+          dangerouslySetInnerHTML={{ __html: BOOTSTRAP }}
         />
-        <LocaleProvider>{children}</LocaleProvider>
+        <SmoothScroll>
+          <LocaleProvider>{children}</LocaleProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

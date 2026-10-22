@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLocale } from "@/lib/i18n";
+import { Reveal } from "./reveal";
 
 const ICON_PROPS = {
   "aria-hidden": true,
@@ -70,53 +71,57 @@ export function FutureProduct() {
           <div className="grid gap-10 p-6 md:grid-cols-2 md:items-center md:gap-14 md:p-12">
             {/* Content */}
             <div>
-              <p className="inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-ink ring-1 ring-line">
+              <Reveal as="p" className="inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-ink ring-1 ring-line">
                 <StatusDot />
                 {t("futureProduct.status")}
-              </p>
+              </Reveal>
 
-              <h3 className="mt-5 text-3xl font-semibold leading-tight md:text-[40px]">
+              <Reveal as="h3" delay={80} className="mt-5 text-3xl font-semibold leading-tight md:text-[40px]">
                 {t("futureProduct.title")}
-              </h3>
+              </Reveal>
 
-              {/* The English gloss line is aimed at the Arabic audience only. */}
-              {locale === "ar" && dict.futureProduct.brandLine && (
-                <p dir="ltr" className="mt-2 text-end text-sm font-medium text-muted">
-                  {dict.futureProduct.brandLine}
+              <Reveal delay={140}>
+                {/* The English gloss line is aimed at the Arabic audience only. */}
+                {locale === "ar" && dict.futureProduct.brandLine && (
+                  <p dir="ltr" className="mt-2 text-end text-sm font-medium text-muted">
+                    {dict.futureProduct.brandLine}
+                  </p>
+                )}
+
+                <p className="mt-6 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
+                  {t("futureProduct.subtitle")}
                 </p>
-              )}
 
-              <p className="mt-6 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
-                {t("futureProduct.subtitle")}
-              </p>
+                <p className="mt-5 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
+                  {t("futureProduct.description")}
+                </p>
 
-              <p className="mt-5 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
-                {t("futureProduct.description")}
-              </p>
-
-              <p className="mt-5 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
-                {t("futureProduct.vision")}
-              </p>
+                <p className="mt-5 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
+                  {t("futureProduct.vision")}
+                </p>
+              </Reveal>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {dict.futureProduct.features.map((feature, i) => (
-                  <div key={feature.title} className="rounded-2xl bg-white p-5">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-paper text-ink ring-1 ring-line">
-                      {FEATURE_ICONS[i]}
-                    </span>
-                    <h5 className="mt-4 text-[15px] font-semibold">
-                      {feature.title}
-                    </h5>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {feature.desc}
-                    </p>
-                  </div>
+                  <Reveal as="div" key={feature.title} delay={120 + i * 90}>
+                    <div className="h-full rounded-2xl bg-white p-5 transition-transform duration-200 ease-out hover:-translate-y-1 motion-reduce:transition-none">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-paper text-ink ring-1 ring-line">
+                        {FEATURE_ICONS[i]}
+                      </span>
+                      <h5 className="mt-4 text-[15px] font-semibold">
+                        {feature.title}
+                      </h5>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {feature.desc}
+                      </p>
+                    </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
 
             {/* Image (unchanged asset) */}
-            <div>
+            <Reveal as="div" direction="scale" delay={120}>
               <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-line">
                 <Image
                   src="/images/FutureProduct.png"
@@ -130,7 +135,7 @@ export function FutureProduct() {
               <p className="mt-4 text-sm leading-relaxed text-muted">
                 {t("futureProduct.imageNote")}
               </p>
-            </div>
+            </Reveal>
           </div>
 
           {/* Development status */}

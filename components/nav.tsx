@@ -98,8 +98,8 @@ export function Nav() {
       {/* Mobile menu */}
       <div
         inert={!open}
-        className={`overflow-hidden border-t border-line bg-white transition-[max-height] duration-300 md:hidden ${
-          open ? "max-h-96" : "max-h-0 border-t-0"
+        className={`overflow-hidden border-t border-line bg-white transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none md:hidden ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 border-t-0"
         }`}
       >
         <nav className="flex flex-col gap-1 px-6 py-4">

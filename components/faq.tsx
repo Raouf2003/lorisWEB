@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useLocale } from "@/lib/i18n";
+import { Reveal } from "./reveal";
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -35,7 +36,11 @@ export function Faq() {
       {dict.faq.items.map((item, i) => {
         const open = openIndex === i;
         return (
-          <div key={i} className={i > 0 ? "border-t border-line" : ""}>
+          <Reveal
+            as="div"
+            key={i}
+            className={i > 0 ? "border-t border-line" : ""}
+          >
             <button
               type="button"
               aria-expanded={open}
@@ -54,7 +59,7 @@ export function Faq() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         );
       })}
     </div>

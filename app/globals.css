@@ -11,8 +11,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 88px;
+}
+
+/* CSS scroll-behavior: smooth runs the browser's own momentum; Lenis owns
+   all scrolling while JavaScript is active (html.js is set by the inline
+   bootstrap script before first paint), and the two must never fight.
+   So the browser-level smooth behavior exists only as the no-JS fallback. */
+html:not(.js) {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -110,6 +117,52 @@ body {
     animation: parallax-drift linear both;
     animation-timeline: view();
     animation-range: entry 0% exit 100%;
+  }
+}
+
+/* ---------- Scroll reveal ----------
+ * Elements marked [data-reveal] stay hidden only while JS is running
+ * (the `js` class is set by the inline bootstrap script before first paint),
+ * so content always renders when JavaScript is unavailable.
+ * A tiny shared IntersectionObserver flips [data-reveal-in] exactly once,
+ * which makes the reveal a pure CSS transition — no React re-render.
+ * Hover/entrance motion restricted to transform + opacity (GPU-friendly);
+ * direction-neutral movement keeps RTL/LTR identical.
+ */
+:root {
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 650ms;
+  --reveal-lift: 18px;
+}
+
+html.js [data-reveal] {
+  opacity: 0;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-duration) var(--reveal-ease)
+      var(--reveal-delay, 0ms);
+}
+
+html.js [data-reveal="up"] {
+  transform: translate3d(0, var(--reveal-lift), 0);
+}
+
+html.js [data-reveal="scale"] {
+  transform: scale(0.985);
+}
+
+/* "fade" = opacity only; nothing to offset. */
+html.js [data-reveal][data-reveal-in] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
