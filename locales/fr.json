@@ -4,9 +4,9 @@
     "description": "Protégez votre bétail avec le berger électrique intelligent — sans danger, à l'énergie solaire et facile à installer. Conception robuste, batterie de 50 heures d'autonomie et la confiance des agriculteurs pour une protection fiable et sans effort."
   },
   "nav": {
-    "homeAria": "LORIS — Page d'accueil",
-    "logoAlt": "LORIS",
-    "about": "À propos de LORIS",
+    "homeAria": "LORIS Electronics — Page d'accueil",
+    "logoAlt": "LORIS Electronics",
+    "about": "À propos de LORIS Electronics",
     "how": "Comment ça marche",
     "product": "Produit",
     "contact": "Contactez-nous",
@@ -140,15 +140,15 @@
     "whatsapp": "Écrivez-nous sur WhatsApp",
     "facebook": "Facebook",
     "tiktok": "TikTok",
-    "phoneAria": "Appelez-nous au 0669 99 08 96"
+    "phoneAria": "Appelez-nous au 0771 66 73 05"
   },
   "footer": {
     "tagline": "La solution, c'est le berger LORIS",
-    "logoAlt": "LORIS",
+    "logoAlt": "LORIS Electronics",
     "companyTitle": "Entreprise",
     "contactLink": "Contactez-nous",
-    "bigLogoAlt": "Logo LORIS",
-    "rights": "© 2025. Tous droits réservés. LORIS",
-    "instagramAria": "LORIS sur Instagram"
+    "bigLogoAlt": "Logo LORIS Electronics",
+    "rights": "© 2025. Tous droits réservés. LORIS Electronics",
+    "instagramAria": "LORIS Electronics sur Instagram"
   }
 }

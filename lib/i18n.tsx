@@ -23,6 +23,13 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   fr: "Français",
 };
 
+/** Compact Latin codes for the navbar switch trigger. */
+export const LOCALE_CODES: Record<Locale, string> = {
+  ar: "AR",
+  en: "EN",
+  fr: "FR",
+};
+
 export const DEFAULT_LOCALE: Locale = "ar";
 
 const STORAGE_KEY = "loris-locale";

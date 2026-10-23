@@ -4,9 +4,9 @@
     "description": "Protect your livestock with the smart electric shepherd — safe, solar-powered, and easy to install. Durable design, a battery that lasts 50 hours, and the trust of farmers for reliable, effortless protection."
   },
   "nav": {
-    "homeAria": "LORIS — Home page",
-    "logoAlt": "LORIS",
-    "about": "About LORIS",
+    "homeAria": "LORIS Electronics — Home page",
+    "logoAlt": "LORIS Electronics",
+    "about": "About LORIS Electronics",
     "how": "How it works",
     "product": "Product",
     "contact": "Contact us",
@@ -140,15 +140,15 @@
     "whatsapp": "Chat with Us on WhatsApp",
     "facebook": "Facebook",
     "tiktok": "TikTok",
-    "phoneAria": "Call us at 0669 99 08 96"
+    "phoneAria": "Call us at 0771 66 73 05"
   },
   "footer": {
     "tagline": "The solution is the LORIS Electric Shepherd",
-    "logoAlt": "LORIS",
+    "logoAlt": "LORIS Electronics",
     "companyTitle": "Company",
     "contactLink": "Contact us",
-    "bigLogoAlt": "LORIS logo",
-    "rights": "© 2025. All rights reserved. LORIS",
-    "instagramAria": "LORIS on Instagram"
+    "bigLogoAlt": "LORIS Electronics logo",
+    "rights": "© 2025. All rights reserved. LORIS Electronics",
+    "instagramAria": "LORIS Electronics on Instagram"
   }
 }
