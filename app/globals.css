@@ -166,6 +166,51 @@ html.js [data-reveal][data-reveal-in] {
   }
 }
 
+/* ---------- Hero first-paint entrance ----------
+ * The hero cluster (heading, paragraph, LCP image) must not wait for React
+ * hydration plus the shared IntersectionObserver: this pure-CSS keyframe
+ * entrance starts at first paint and runs with or without JavaScript.
+ * It mirrors the site-wide reveal tokens (--reveal-duration/ease/lift) and
+ * shows the same movement, delays and scale as the old reveal — just earlier.
+ * One mechanism per element: no Reveal transition runs here in parallel, and
+ * transform/opacity-only keyframes keep the layout perfectly still. Under
+ * prefers-reduced-motion the animation is dropped entirely (static hero).
+ */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-lift), 0);
+  }
+}
+
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+
+[data-hero-reveal] {
+  animation-duration: var(--reveal-duration);
+  animation-timing-function: var(--reveal-ease);
+  animation-delay: var(--hero-delay, 0ms);
+  animation-fill-mode: backwards;
+}
+
+[data-hero-reveal="up"] {
+  animation-name: hero-rise;
+}
+
+[data-hero-reveal="scale"] {
+  animation-name: hero-scale-in;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-reveal] {
+    animation: none;
+  }
+}
+
 /* ---------------------------------- FAQ accordion --------------------------------- */
 .faq-answer {
   display: grid;

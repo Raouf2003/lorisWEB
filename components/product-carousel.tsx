@@ -122,8 +122,11 @@ export function ProductCarousel() {
               src={src}
               alt={dict.product.carousel.imageAlts[i]}
               fill
+              /* All three <img> stack at the same viewport position inside one
+                 container, so Next's default lazy loading applies uniformly:
+                 nothing is fetched at page load or preloaded, and the whole
+                 set arrives when the carousel approaches the viewport. */
               sizes="(min-width: 1248px) 1248px, 100vw"
-              loading="eager"
               className={`object-cover transition-opacity duration-500 ease-out motion-reduce:transition-none ${
                 i === index ? "opacity-100" : "opacity-0"
               }`}
