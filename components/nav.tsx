@@ -20,10 +20,20 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Escape closes the sheet (and the burger keeps focus, like a native dialog).
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_0_rgba(0,0,0,0.06)]" : ""
+        scrolled || open ? "shadow-[0_1px_0_0_rgba(0,0,0,0.06)]" : ""
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1248px] items-center justify-between px-6">
@@ -77,7 +87,7 @@ export function Nav() {
             aria-label={open ? t("nav.menuClose") : t("nav.menuOpen")}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-line/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/25 md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full transition-[color,background-color,transform] duration-150 ease-out hover:bg-line/60 active:bg-line active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/25 md:hidden"
           >
             <span className="relative block h-3 w-5">
               <span
@@ -95,44 +105,53 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — animated like the FAQ accordion: grid-template-rows
+          0fr -> 1fr settles at the real content height (no max-height guess
+          or clipped links). inert keeps the closed sheet out of the tab order
+          and a11y tree; rows arrive with a staggered rise (globals.css), and
+          the border fades in with the sheet instead of popping. */}
       <div
         inert={!open}
-        className={`overflow-hidden border-t border-line bg-white transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none md:hidden ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 border-t-0"
+        data-open={open}
+        className={`menu-sheet grid border-t md:hidden ${
+          open ? "border-line" : "border-transparent"
         }`}
       >
-        <nav className="flex flex-col gap-1 px-6 py-4">
-          {NAV_LINKS.map((link) => (
+        <div>
+          <nav className="flex flex-col gap-1 px-6 pb-5 pt-2">
+            {NAV_LINKS.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                style={{ "--i": i } as React.CSSProperties}
+                onClick={() => setOpen(false)}
+                className="menu-row rounded-xl px-4 py-3.5 text-[15px] font-medium text-ink transition-[transform,background-color] duration-150 ease-out hover:bg-line/60 active:bg-line active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/25"
+              >
+                {t(`nav.${link.key}`)}
+              </a>
+            ))}
             <a
-              key={link.href}
-              href={link.href}
-              className="rounded-xl px-4 py-3.5 text-[15px] font-medium text-ink transition-colors hover:bg-line/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/25 active:bg-line"
+              href="#contact"
+              style={{ "--i": NAV_LINKS.length } as React.CSSProperties}
               onClick={() => setOpen(false)}
+              className="menu-row mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 text-sm font-semibold text-white transition-[transform,background-color] duration-150 ease-out hover:bg-coal active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30"
             >
-              {t(`nav.${link.key}`)}
+              <span>{t("nav.cta")}</span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`h-4 w-4 ${ltr ? "rotate-180" : ""}`}
+              >
+                <path d="M19 12H5m0 0 6-6m-6 6 6 6" />
+              </svg>
             </a>
-          ))}
-          <a
-            href="#contact"
-            className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 text-sm font-semibold text-white transition-colors hover:bg-coal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30"
-            onClick={() => setOpen(false)}
-          >
-            <span>{t("nav.cta")}</span>
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`h-4 w-4 ${ltr ? "rotate-180" : ""}`}
-            >
-              <path d="M19 12H5m0 0 6-6m-6 6 6 6" />
-            </svg>
-          </a>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   );

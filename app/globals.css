@@ -166,7 +166,7 @@ html.js [data-reveal][data-reveal-in] {
   }
 }
 
-/* ---------- FAQ accordion ---------- */
+/* ---------------------------------- FAQ accordion --------------------------------- */
 .faq-answer {
   display: grid;
   grid-template-rows: 0fr;
@@ -179,4 +179,51 @@ html.js [data-reveal][data-reveal-in] {
 
 .faq-answer > div {
   overflow: hidden;
+}
+
+/* ---------- Mobile nav sheet ----------
+ * Same technique as the FAQ accordion (grid-template-rows 0fr -> 1fr): the
+ * sheet settles at the real content height — no max-height guess, no lag.
+ * Open 320ms / close 220ms (exits faster); rows arrive with a small staggered
+ * rise (animation + `backwards`, re-triggered by [data-open] flipping).
+ * Row hover/press stay on fast transitions — entrance and hover are separate
+ * jobs. The sheet's grid display comes from Tailwind (`grid md:hidden`), this
+ * class only animates. No motion at all under prefers-reduced-motion.
+ */
+.menu-sheet {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms var(--reveal-ease),
+    border-color 220ms var(--reveal-ease);
+}
+
+.menu-sheet[data-open="true"] {
+  grid-template-rows: 1fr;
+  transition-duration: 320ms, 220ms;
+}
+
+.menu-sheet > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+@keyframes menu-row-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.menu-sheet[data-open="true"] .menu-row {
+  animation: menu-row-rise 260ms var(--reveal-ease) backwards;
+  animation-delay: calc(var(--i, 0) * 55ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-sheet {
+    transition: none;
+  }
+
+  .menu-sheet[data-open="true"] .menu-row {
+    animation: none;
+  }
 }
